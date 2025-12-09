@@ -58,7 +58,21 @@ If you are looking for polished, scroll stopping videos that elevate your brand 
 
 // Your WhatsApp Number for the Order page
 // Format: CountryCode + Number (e.g., 15551234567)
-export const WHATSAPP_NUMBER = "01028008637"; 
+export const WHATSAPP_NUMBER = "+20 10 28008637"; 
+
+// =============================================================================
+//  SOCIAL MEDIA LINKS (EDIT THIS SECTION)
+// =============================================================================
+// Leave the string empty "" if you don't want to show that icon.
+
+export const SOCIAL_LINKS = {
+  youtube: "https://www.youtube.com/@omarnazeeh8070",
+  instagram: "https://www.instagram.com/omar_editing1?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+  facebook: "https://www.facebook.com/profile.php?id=61583318349816",
+  tiktok: "https://www.tiktok.com/@omar_editing1",
+  linkedin: "https://www.linkedin.com/in/omar-nazeeh-176b95379/",
+  email: "omarnazeeh2020@gmail.com", // Just your email address (no 'mailto:')
+};
 
 
 // =============================================================================

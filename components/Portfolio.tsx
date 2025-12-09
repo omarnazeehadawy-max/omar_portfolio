@@ -53,7 +53,7 @@ const Portfolio: React.FC = () => {
   const getDMId = selectedProject ? getDailymotionId(selectedProject.src) : null;
 
   return (
-    <section className="py-24 bg-zinc-950 relative">
+    <section id="portfolio" className="py-24 bg-zinc-950 relative">
       <div className="container mx-auto px-6 max-w-6xl">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}

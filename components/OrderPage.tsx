@@ -97,19 +97,15 @@ ${formData.description}`;
 
             <div className="space-y-2">
               <label className="text-sm font-medium text-zinc-300">Estimated Budget</label>
-              <select 
+              <input 
+                type="text"
                 name="budget"
                 required
                 value={formData.budget}
                 onChange={handleChange}
-                className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all appearance-none"
-              >
-                <option value="" disabled>Select a range</option>
-                <option value="$500 - $1,000">$500 - $1,000</option>
-                <option value="$1,000 - $5,000">$1,000 - $5,000</option>
-                <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-                <option value="$10,000+">$10,000+</option>
-              </select>
+                className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all"
+                placeholder="e.g. $500 or Open to discussion"
+              />
             </div>
 
             <div className="space-y-2">

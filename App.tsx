@@ -4,8 +4,26 @@ import Hero from './components/Hero';
 import Portfolio from './components/Portfolio';
 import Testimonials from './components/Testimonials';
 import OrderPage from './components/OrderPage';
-import { ArrowRight } from 'lucide-react';
-import { PERSONAL_INFO } from './constants';
+import { ArrowRight, Mail, Instagram, Linkedin, Youtube, Facebook } from 'lucide-react';
+import { PERSONAL_INFO, SOCIAL_LINKS } from './constants';
+
+// Custom TikTok Icon SVG since it may not be available in all versions of lucide-react
+const TiktokIcon = ({ className }: { className?: string }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="24" 
+    height="24" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
 
 function App() {
   // Simple state-based routing for a single-page feel
@@ -65,8 +83,57 @@ function App() {
               </section>
 
               {/* Footer */}
-              <footer className="py-8 bg-black border-t border-zinc-900 text-center text-zinc-600 text-sm">
-                <p>&copy; {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.</p>
+              <footer className="py-12 bg-black border-t border-zinc-900 text-center">
+                <div className="flex justify-center items-center gap-6 mb-8 flex-wrap">
+                  {/* YouTube */}
+                  {SOCIAL_LINKS.youtube && (
+                    <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-white hover:bg-red-600 transition-all group" title="YouTube">
+                      <Youtube className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    </a>
+                  )}
+                  
+                  {/* Instagram */}
+                  {SOCIAL_LINKS.instagram && (
+                    <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-white hover:bg-pink-600 transition-all group" title="Instagram">
+                      <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    </a>
+                  )}
+
+                  {/* Facebook */}
+                  {SOCIAL_LINKS.facebook && (
+                    <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-white hover:bg-blue-700 transition-all group" title="Facebook">
+                      <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    </a>
+                  )}
+
+                  {/* TikTok */}
+                  {SOCIAL_LINKS.tiktok && (
+                    <a href={SOCIAL_LINKS.tiktok} target="_blank" rel="noopener noreferrer" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-white hover:bg-black hover:border-zinc-700 border border-transparent transition-all group" title="TikTok">
+                      <TiktokIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    </a>
+                  )}
+
+                  {/* LinkedIn */}
+                  {SOCIAL_LINKS.linkedin && (
+                    <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-white hover:bg-blue-600 transition-all group" title="LinkedIn">
+                      <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    </a>
+                  )}
+                  
+                  {/* Gmail (Email) */}
+                  {SOCIAL_LINKS.email && (
+                    <a 
+                      href={`https://mail.google.com/mail/?view=cm&fs=1&to=${SOCIAL_LINKS.email}`} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="p-3 bg-zinc-900 rounded-full text-zinc-400 hover:text-white hover:bg-green-600 transition-all group" 
+                      title="Send Email"
+                    >
+                      <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    </a>
+                  )}
+                </div>
+                <p className="text-zinc-600 text-sm">&copy; {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.</p>
               </footer>
             </main>
           </motion.div>
